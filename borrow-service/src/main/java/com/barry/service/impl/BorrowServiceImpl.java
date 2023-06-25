@@ -37,6 +37,7 @@ public class BorrowServiceImpl implements BorrowService{
                 .stream()
                 .map(b -> template.getForObject("http://localhost:8201/book/"+b.getBid(), Book.class))
                 .collect(Collectors.toList());
+        System.out.println();
         return new UserBorrowDetail(user, bookList);
     }
 }
